@@ -1,0 +1,23 @@
+{
+  "name": "hudl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server . -p 8080 -o /task.html",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:headed": "start-server-and-test \"npm run start -- --file=${npm_config_file:-task.html}\" http://localhost:8080 cypress:open",
+    "test:headless": "start-server-and-test start http://localhost:8080/task.html cypress:run",
+    "test": "npm run test:headless && npm run test:headed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.10.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "http-server": "^14.1.1",
+    "start-server-and-test": "^2.0.4"
+  }
+}
